@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: white;
+  line-height: 1.6;
+}
+
+#bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  filter: brightness(0.3);
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+/* Navbar Styles (matches home page) */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(13, 37, 42, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-header h1 {
+  color: white;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.2s;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #4acfee;
+  background-color: rgba(74, 207, 238, 0.1);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  color: white;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1100;
+  background-color: rgba(13, 37, 42, 0.3);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.intro {
+  display: flex;
+  margin-top: 5%;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.intro .text {
+  flex: 2;
+}
+
+.intro .text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #4acfee, #53f8c9, #6070fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+}
+
+.intro .text p {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.profile-img {
+  flex: 1;
+  text-align: center;
+}
+
+.profile-img img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 4px solid #4acfee;
+  object-fit: cover;
+}
+
+.info-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  justify-content: space-around;
+}
+
+.info-card {
+  background-color: #101010;
+  border: 1px solid #4acfee4d;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px #4acfee;
+}
+
+.info-card h3 {
+  margin-bottom: 10px;
+  color: #4acfee;
+}
+
+.info-card i {
+  margin-right: 10px;
+}
+
+/* Contact Footer Styles */
+.contact-footer {
+  background-color: rgba(16, 16, 16, 0.8);
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 50px;
+  border: 1px solid #4acfee4d;
+}
+
+.contact-footer h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #4acfee;
+}
+
+.footer-subtitle {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #aaa;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.contact-item {
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-item h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #4acfee;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.contact-item p {
+  font-size: 16px;
+  color: #ddd;
+}
+
+.contact-item i {
+  font-size: 24px;
+}
+
+@media (max-width: 992px) {
+  .intro {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 50px;
+    margin-top: 20%;
+  }
+  
+  .hero-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .Buttons {
+    justify-content: center;
+  }
+  
+  .hero-img {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+    margin-top: 80px;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .intro .text h2 {
+    font-size: 24px;
+  }
+
+  .intro .text p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .profile-img img {
+    width: 160px;
+    height: 160px;
+    border-width: 3px;
+  }
+
+  .info-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-card {
+    width: 90%;
+  }
+
+  .navbar h1 {
+    font-size: 18px;
+  }
+
+  .navbar ul li a {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  /* Footer responsive styles */
+  .contact-info {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-item {
+    min-width: 100%;
+  }
+}
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .nav-links.show {
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 10px 0;
+  }
+  
+  .nav-links li a {
+    padding: 10px;
+    display: block;
+    width: 100%;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+}

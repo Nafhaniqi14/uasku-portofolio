@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nafhan Haqiqi | Portofolio | About</title>
+  <link rel="stylesheet" href="About.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <!-- ✅ AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="Asset/galaxy.mp4" type="video/mp4">
+  </video>
+
+  <div class="about-container">
+    <!-- Navbar for About Page (matches home page) -->
+    <nav class="navbar">
+      <div class="nav-header">
+        <h1 data-aos="zoom-in" data-aos-duration="1000"><span style="color: #4acfee;">Porto</span>folio</h1>
+      </div>
+      <ul class="nav-links">
+        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></li>
+        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a class="active" href="about.html">About</a></li>
+        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="Project.html">Projects</a></li>
+        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="Skilss.html">Skills</a></li>
+        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#">Resume</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="menu-toggle">
+      <i class='bx bx-menu'></i>
+    </div>
+    
+    <section class="intro">
+      <div class="text">
+        <h2 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="700">
+          Hello! I'm <span class="gradient-text">Nafhan Haqiqi</span>
+        </h2>
+        <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay="800">
+          I'm a passionate developer, graphic designer, and data science enthusiast who enjoys turning ideas into real-world products. I believe in continuous learning, building meaningful solutions, and helping others through my work.
+        </p>
+        <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">
+          I started my journey in programming with a curious mind and a desire to explore how technology shapes our world. Over the years, I've explored multiple domains such as web development, data visualization, and UI/UX design.
+        </p>
+        <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1000">
+          When I'm not coding, I enjoy designing, editing videos, and diving into topics like machine learning and animation. My goal is to create things that are useful, beautiful, and impactful.
+        </p>
+      </div>
+      <div class="profile-img" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="700">
+        <img src="Asset\my photo.jpg" alt="My Photo">
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <div class="info-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="500">
+        <h3><i class='bx bxs-graduation'></i> Education</h3>
+        <p>S1 Informatika - University of Singaperbangsa Karawang</p>
+      </div>
+      <div class="info-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="600">
+        <h3><i class='bx bx-code'></i> Focus Areas</h3>
+        <p>Web Development, Graphic Design, Data Science</p>
+      </div>
+      <div class="info-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="700">
+        <h3><i class='bx bx-brain'></i> Interests</h3>
+        <p>Machine Learning, UI/UX, Animation, Content Creation</p>
+      </div>
+    </section>
+
+    <!-- Contact Footer Section -->
+    <footer class="contact-footer" data-aos="fade-up" data-aos-duration="1000">
+      <h2>Get in Touch</h2>
+      <p class="footer-subtitle">For business and partnership inquiry please contact me below!</p>
+      
+      <div class="contact-info">
+        <div class="contact-item">
+          <h3><i class='bx bx-phone'></i> Phone</h3>
+          <p>0812-8113-1002</p>
+        </div>
+        
+        <div class="contact-item">
+          <h3><i class='bx bx-envelope'></i> Email</h3>
+          <p>nafhanhaqiqli44@gmail.com</p>
+        </div>
+        
+        <div class="contact-item">
+          <h3><i class='bx bx-map'></i> Address</h3>
+          <p>Kutapohaci, Ciampel, Karawang, Jawa Barat</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ✅ AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <script src="Scriptabout.js"></script>
+</body>
+</html>

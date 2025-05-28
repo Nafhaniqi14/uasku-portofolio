@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nafhan Haqiqi | Portfolio | Projects</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="Project.css">
+</head>
+<body>
+  <video autoplay loop muted plays-inline class="back-vid">
+    <source src="Asset/galaxy.mp4" type="video/mp4">
+  </video>
+  <div class="menu-toggle">
+    <i class='bx bx-menu'></i>
+  </div>
+  
+  <nav class="navbar">
+    <div class="nav-header">
+      <h1 data-aos="zoom-in" data-aos-duration="1000"><span style="color: #4acfee;">Porto</span>folio</h1>
+    </div>
+    <ul class="nav-links">
+      <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="Home.html">Home</a></li>
+      <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="About.html">About</a></li>
+      <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a class="active" href="Project.html">Projects</a></li>
+      <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="Skilss.html">Skills</a></li>
+      <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#">Resume</a></li>
+    </ul>
+  </nav>
+  
+  <section class="projects-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>My Recent Works</h2>
+        <p>Here are a few projects I've worked on recently.</p>
+      </div>
+      
+      <div class="projects-horizontal">
+        <!-- Project 1 -->
+        <div class="project-box" data-aos="fade-right">
+          <div class="project-image">
+            <img src="Asset/laptop_realistic.png" alt="Graphic Design">
+          </div>
+          <div class="project-content">
+            <h3>Graphic Design</h3>
+            <p>Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages.</p>
+            <div class="project-links">
+              <a href="#"><i class='bx bx-link-external'></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-box" data-aos="fade-right" data-aos-delay="100">
+          <div class="project-image">
+            <img src="assets/blog.jpg" alt="Bits-of-Code Project">
+          </div>
+          <div class="project-content">
+            <h3>Bits-of-Code</h3>
+            <p>My personal blog page build with Next.js and Tailwind CSS which takes the content from markdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown.</p>
+            <div class="project-links">
+              <a href="#"><i class='bx bx-link-external'></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-box" data-aos="fade-right" data-aos-delay="200">
+          <div class="project-image">
+            <img src="assets/editor.jpg" alt="Editorio Project">
+          </div>
+          <div class="project-content">
+            <h3>Editorio</h3>
+            <p>Online code and markdown editor build with react.js. Supports HTML, CSS, and JS code with instant preview. Markdown editor supports GFM, custom HTML tags with toolbar and instant preview. Both editors auto-save work using Local Storage.</p>
+            <div class="project-links">
+              <a href="#"><i class='bx bx-link-external'></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="project.js"></script>
+</body>
+</html>
