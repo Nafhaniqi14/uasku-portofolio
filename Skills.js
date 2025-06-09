@@ -215,3 +215,108 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+// Loading Page Functionality
+function initLoadingPage() {
+  // Create shooting stars
+  function createShootingStar() {
+    const star = document.createElement('div');
+    star.className = 'shooting-star';
+    star.style.left = Math.random() * 100 + 'vw';
+    star.style.top = Math.random() * 100 + 'vh';
+    star.style.width = (Math.random() * 3 + 1) + 'px';
+    star.style.height = star.style.width;
+    star.style.animationDuration = (Math.random() * 2 + 1) + 's';
+    document.querySelector('.galaxy').appendChild(star);
+    
+    // Remove star after animation
+    setTimeout(() => {
+      star.remove();
+    }, 2000);
+  }
+  
+  // Add shooting stars periodically
+  setInterval(createShootingStar, 500);
+  
+  // Simulate loading progress
+  let progress = 0;
+  const progressBar = document.querySelector('.progress');
+  const loadingInterval = setInterval(() => {
+    progress += Math.random() * 10;
+    if (progress >= 100) {
+      progress = 100;
+      clearInterval(loadingInterval);
+      
+      // Hide loading overlay when complete
+      setTimeout(() => {
+        document.querySelector('.loading-overlay').style.opacity = '0';
+        setTimeout(() => {
+          document.querySelector('.loading-overlay').style.display = 'none';
+        }, 10);
+      }, 0);
+    }
+    progressBar.style.width = progress + '%';
+  }, 0);
+  
+  // Add some shooting stars immediately
+  for (let i = 0; i < 5; i++) {
+    setTimeout(createShootingStar, i * 200);
+  }
+}
+
+// Panggil fungsi loading saat DOM siap
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize loading page
+  initLoadingPage();
+  
+  // Kode AOS dan menu toggle yang sudah ada
+  AOS.init();
+  
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navMenu = document.querySelector(".nav-links");
+  
+  menuToggle.addEventListener("click", function() {
+    navMenu.classList.toggle("show");
+    this.querySelector("i").classList.toggle("bx-menu");
+    this.querySelector("i").classList.toggle("bx-x");
+  });
+  
+  // Close menu when clicking on a link
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("show");
+      document.querySelector(".menu-toggle i").classList.remove("bx-x");
+      document.querySelector(".menu-toggle i").classList.add("bx-menu");
+    });
+  });
+  
+  // Typing effect
+  const texts = ["Website Developer", "Data Scientist", "Graphic Designer"];
+  let index = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const speed = 100;
+  const delay = 2000;
+
+  function typeEffect() {
+    const currentText = texts[index];
+    const displayedText = currentText.substring(0, charIndex);
+    document.getElementById("changing-text").textContent = displayedText;
+
+    if (!isDeleting && charIndex < currentText.length) {
+      charIndex++;
+      setTimeout(typeEffect, speed);
+    } else if (isDeleting && charIndex > 0) {
+      charIndex--;
+      setTimeout(typeEffect, speed / 2);
+    } else if (!isDeleting && charIndex === currentText.length) {
+      isDeleting = true;
+      setTimeout(typeEffect, delay);
+    } else {
+      isDeleting = false;
+      index = (index + 1) % texts.length;
+      setTimeout(typeEffect, speed);
+    }
+  }
+
+  setTimeout(typeEffect, 1000);
+});

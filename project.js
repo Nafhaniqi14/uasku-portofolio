@@ -1,65 +1,80 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Initialize all functionality
+  initAnimations();
+  initMobileMenu();
+  initActiveLinks();
+  initLoadingPage();
+});
+
+function initAnimations() {
   // Initialize AOS animation
   AOS.init({
     duration: 800,
     easing: 'ease-in-out',
     once: true
   });
-  
-  // Mobile menu toggle
+}
+
+function initMobileMenu() {
   const menuToggle = document.querySelector(".menu-toggle");
   const navMenu = document.querySelector(".nav-links");
   
+  if (!menuToggle || !navMenu) return;
+  
   menuToggle.addEventListener("click", function() {
     navMenu.classList.toggle("show");
-    this.querySelector("i").classList.toggle("bx-menu");
-    this.querySelector("i").classList.toggle("bx-x");
+    const icon = this.querySelector("i");
+    icon.classList.toggle("bx-menu");
+    icon.classList.toggle("bx-x");
   });
   
   // Close menu when clicking on a link
   document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("show");
-      document.querySelector(".menu-toggle i").classList.remove("bx-x");
-      document.querySelector(".menu-toggle i").classList.add("bx-menu");
+      const menuIcon = document.querySelector(".menu-toggle i");
+      menuIcon.classList.remove("bx-x");
+      menuIcon.classList.add("bx-menu");
     });
   });
-  
-  // Add active class to current page link
+}
+
+function initActiveLinks() {
   const currentPage = window.location.pathname.split("/").pop();
   document.querySelectorAll(".nav-links a").forEach(link => {
-    if (link.getAttribute("href") === currentPage) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
+    link.classList.toggle("active", link.getAttribute("href") === currentPage);
+  });
+}
+
+function initLoadingPage() {
+  const loadingOverlay = document.querySelector('.loading-overlay');
+  if (!loadingOverlay) return;
+
+  // Immediately complete the loading
+  loadingOverlay.style.opacity = '0';
+  setTimeout(() => {
+    loadingOverlay.style.display = 'none';
+  }, 500);
+
+  // Optional: You can keep the shooting stars animation if desired
+  function createShootingStar() {
+    const star = document.createElement('div');
+    star.className = 'shooting-star';
+    star.style.left = Math.random() * 100 + 'vw';
+    star.style.top = Math.random() * 100 + 'vh';
+    star.style.width = (Math.random() * 3 + 1) + 'px';
+    star.style.height = star.style.width;
+    star.style.animationDuration = (Math.random() * 2 + 1) + 's';
+    
+    const galaxy = document.querySelector('.galaxy');
+    if (galaxy) {
+      galaxy.appendChild(star);
+      setTimeout(() => star.remove(), 2000);
     }
-  });
-  
-  // Horizontal scroll effect for projects
-  const projectsContainer = document.querySelector(".projects-horizontal");
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-  
-  projectsContainer.addEventListener('mousedown', (e) => {
-    isDown = true;
-    startX = e.pageX - projectsContainer.offsetLeft;
-    scrollLeft = projectsContainer.scrollLeft;
-  });
-  
-  projectsContainer.addEventListener('mouseleave', () => {
-    isDown = false;
-  });
-  
-  projectsContainer.addEventListener('mouseup', () => {
-    isDown = false;
-  });
-  
-  projectsContainer.addEventListener('mousemove', (e) => {
-    if(!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - projectsContainer.offsetLeft;
-    const walk = (x - startX) * 2;
-    projectsContainer.scrollLeft = scrollLeft - walk;
-  });
-});
+  }
+
+  // Add some shooting stars for visual effect
+  for (let i = 0; i < 5; i++) {
+    setTimeout(createShootingStar, i * 200);
+  }
+}

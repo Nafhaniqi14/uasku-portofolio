@@ -1,10 +1,10 @@
-// Typing effect
+// Typing Effect
 const texts = ["Website Developer", "Data Scientist", "Graphic Designer"];
 let index = 0;
 let charIndex = 0;
 let isDeleting = false;
-const speed = 100;
-const delay = 2000;
+const typingSpeed = 100;
+const pauseDelay = 2000;
 
 function typeEffect() {
   const currentText = texts[index];
@@ -13,43 +13,76 @@ function typeEffect() {
 
   if (!isDeleting && charIndex < currentText.length) {
     charIndex++;
-    setTimeout(typeEffect, speed);
+    setTimeout(typeEffect, typingSpeed);
   } else if (isDeleting && charIndex > 0) {
     charIndex--;
-    setTimeout(typeEffect, speed / 2);
+    setTimeout(typeEffect, typingSpeed / 2);
   } else if (!isDeleting && charIndex === currentText.length) {
     isDeleting = true;
-    setTimeout(typeEffect, delay);
+    setTimeout(typeEffect, pauseDelay);
   } else {
     isDeleting = false;
     index = (index + 1) % texts.length;
-    setTimeout(typeEffect, speed);
+    setTimeout(typeEffect, typingSpeed);
   }
 }
 
-// Mobile menu toggle
-document.addEventListener("DOMContentLoaded", () => {
-  // Initialize AOS animation
-  AOS.init();
+// Loading Page with Instant Transition
+function initLoadingPage() {
+  let progress = 0;
+  const progressBar = document.querySelector('.progress');
+  const loadingOverlay = document.querySelector('.loading-overlay');
   
-  // Start typing effect
-  setTimeout(typeEffect, 1000);
-  
+  const loadingInterval = setInterval(() => {
+    progress += Math.random() * 20; // Faster progress increment
+    if (progress >= 100) {
+      progress = 100;
+      clearInterval(loadingInterval);
+      progressBar.style.width = '100%';
+      loadingOverlay.style.opacity = '0';
+      // Remove overlay immediately after fading
+      setTimeout(() => {
+        loadingOverlay.style.display = 'none';
+      }, 300); // Short fade duration
+    }
+    progressBar.style.width = progress + '%';
+  }, 100); // Faster interval
+}
+
+// Mobile Menu Toggle
+function initMobileMenu() {
   const menuToggle = document.querySelector(".menu-toggle");
   const navMenu = document.querySelector(".nav-links");
   
   menuToggle.addEventListener("click", function() {
     navMenu.classList.toggle("show");
-    this.querySelector("i").classList.toggle("bx-menu");
-    this.querySelector("i").classList.toggle("bx-x");
+    const icon = this.querySelector("i");
+    icon.classList.toggle("bx-menu");
+    icon.classList.toggle("bx-x");
   });
   
   // Close menu when clicking on a link
   document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("show");
-      document.querySelector(".menu-toggle i").classList.remove("bx-x");
-      document.querySelector(".menu-toggle i").classList.add("bx-menu");
+      const menuIcon = document.querySelector(".menu-toggle i");
+      menuIcon.classList.remove("bx-x");
+      menuIcon.classList.add("bx-menu");
     });
   });
+}
+
+// Initialize everything when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize loading page (will disappear quickly)
+  initLoadingPage();
+  
+  // Initialize animations
+  AOS.init();
+  
+  // Initialize mobile menu
+  initMobileMenu();
+  
+  // Start typing effect after a brief delay
+  setTimeout(typeEffect, 500);
 });

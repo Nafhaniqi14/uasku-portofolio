@@ -9,9 +9,34 @@
   <link rel="stylesheet" href="Project.css">
 </head>
 <body>
+  <!-- Loading Overlay -->
+  <div class="loading-overlay">
+    <div class="galaxy">
+      <div class="stars"></div>
+      <div class="stars2"></div>
+      <div class="stars3"></div>
+      <div class="planet"></div>
+      <div class="spaceship">
+        <div class="ship-body"></div>
+        <div class="ship-window"></div>
+        <div class="ship-wing-left"></div>
+        <div class="ship-wing-right"></div>
+        <div class="ship-engine"></div>
+      </div>
+    </div>
+    <div class="loading-text">
+      <h1>Nafhan Haqiqi</h1>
+      <p>Loading Portfolio...</p>
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+    </div>
+  </div>
+
   <video autoplay loop muted plays-inline class="back-vid">
     <source src="Asset/galaxy.mp4" type="video/mp4">
   </video>
+  
   <div class="menu-toggle">
     <i class='bx bx-menu'></i>
   </div>
@@ -21,11 +46,11 @@
       <h1 data-aos="zoom-in" data-aos-duration="1000"><span style="color: #4acfee;">Porto</span>folio</h1>
     </div>
     <ul class="nav-links">
-      <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="Home.html">Home</a></li>
+      <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></li>
       <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="About.html">About</a></li>
       <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a class="active" href="Project.html">Projects</a></li>
       <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="Skilss.html">Skills</a></li>
-      <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#">Resume</a></li>
+      <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="Resume.html">Resume</a></li>
     </ul>
   </nav>
   
@@ -36,45 +61,59 @@
         <p>Here are a few projects I've worked on recently.</p>
       </div>
       
-      <div class="projects-horizontal">
+      <div class="projects-grid">
         <!-- Project 1 -->
-        <div class="project-box" data-aos="fade-right">
+        <div class="project-box" data-aos="fade-up" data-aos-delay="100">
           <div class="project-image">
             <img src="Asset/laptop_realistic.png" alt="Graphic Design">
           </div>
           <div class="project-content">
-            <h3>Graphic Design</h3>
-            <p>Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages.</p>
+            <h3>Design Graphic</h3>
+            <p>My personal design portfolio built with Correldraw and Photoshop, showcasing various graphic design works such as logos, brochures, packaging, and more. Fully responsive with dark mode support. Clean layout and easy to update, making it simple to present creative projects professionally.</p>
             <div class="project-links">
-              <a href="#"><i class='bx bx-link-external'></i> Live Demo</a>
+              <a href="Asset/Portofolio_Nafhan Haqiqi (1).pdf"><i class='bx bx-link-external'></i> Live Demo</a>
             </div>
           </div>
         </div>
         
         <!-- Project 2 -->
-        <div class="project-box" data-aos="fade-right" data-aos-delay="100">
+        <div class="project-box" data-aos="fade-up" data-aos-delay="200">
           <div class="project-image">
-            <img src="assets/blog.jpg" alt="Bits-of-Code Project">
+            <img src="Asset/laptop Website.png" alt="Islam Pedia">
           </div>
           <div class="project-content">
-            <h3>Bits-of-Code</h3>
-            <p>My personal blog page build with Next.js and Tailwind CSS which takes the content from markdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown.</p>
+            <h3>Islam Pedia</h3>
+            <p>A trusted source of Islamic knowledge that presents various Islamic articles, studies, and references based on the Qur'an and Sunnah.</p>
             <div class="project-links">
-              <a href="#"><i class='bx bx-link-external'></i> Live Demo</a>
+              <a href="https://nafhaniqi14.github.io/Website-Agama/"><i class='bx bx-link-external'></i> Live Demo</a>
             </div>
           </div>
         </div>
         
         <!-- Project 3 -->
-        <div class="project-box" data-aos="fade-right" data-aos-delay="200">
+        <div class="project-box" data-aos="fade-up" data-aos-delay="300">
           <div class="project-image">
-            <img src="assets/editor.jpg" alt="Editorio Project">
+            <img src="Asset/Laptop Social Media.png" alt="Data Sience">
           </div>
           <div class="project-content">
-            <h3>Editorio</h3>
-            <p>Online code and markdown editor build with react.js. Supports HTML, CSS, and JS code with instant preview. Markdown editor supports GFM, custom HTML tags with toolbar and instant preview. Both editors auto-save work using Local Storage.</p>
+            <h3>Social media</h3>
+            <p>A personal collection of social media poster designs crafted using CorelDRAW and Photoshop. Focused on visual impact and message clarity to engage audiences across platforms like Instagram and Facebook.</p>
             <div class="project-links">
-              <a href="#"><i class='bx bx-link-external'></i> Live Demo</a>
+              <a href="Asset/Social Media.pdf"><i class='bx bx-link-external'></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="project-box" data-aos="fade-up" data-aos-delay="400">
+          <div class="project-image">
+            <img src="Asset/Laptop Data.png" alt="Data Sience">
+          </div>
+          <div class="project-content">
+            <h3>Data Sience</h3>
+            <p>A personal data science project built using Python, featuring data cleaning, analysis, and visualization with libraries like Pandas, NumPy, and Matplotlib. Easy to maintain and expand, making it ideal for exploring insights from various datasets.</p>
+            <div class="project-links">
+              <a href="Asset/Data Vizualization_2410631170095_Nafhan Haqiqi_Kls 1A Informatika.pdf"><i class='bx bx-link-external'></i> Live Demo</a>
             </div>
           </div>
         </div>
@@ -83,6 +122,6 @@
   </section>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="project.js"></script>
+  <script src="Project.js"></script>
 </body>
 </html>
