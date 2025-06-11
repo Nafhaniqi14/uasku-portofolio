@@ -474,7 +474,6 @@ body {
   width: 100%; /* Changed from 100% to maintain proportions */
   height: 500px;
   max-width: 350px;
-  margin-bottom: 100px;
   border-radius: 20px;
   border: 3px solid #4acfee;
   box-shadow: 0 0 20px rgba(74, 207, 238, 0.5);
