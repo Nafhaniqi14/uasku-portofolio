@@ -78,3 +78,49 @@ function initLoadingPage() {
     setTimeout(createShootingStar, i * 200);
   }
 }
+
+// Mobile Menu Toggle
+function initMobileMenu() {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navMenu = document.querySelector(".nav-links");
+  const navbar = document.querySelector(".navbar");
+  
+  menuToggle.addEventListener("click", function() {
+    navMenu.classList.toggle("show");
+    navbar.classList.toggle("expanded"); // Tambahan untuk styling
+    const icon = this.querySelector("i");
+    icon.classList.toggle("bx-menu");
+    icon.classList.toggle("bx-x");
+    
+    // Tambahan untuk mencegah scroll saat menu terbuka
+    if (navMenu.classList.contains("show")) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  });
+  
+  // Close menu when clicking on a link
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("show");
+      navbar.classList.remove("expanded");
+      document.body.style.overflow = "";
+      const menuIcon = document.querySelector(".menu-toggle i");
+      menuIcon.classList.remove("bx-x");
+      menuIcon.classList.add("bx-menu");
+    });
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener("click", function(event) {
+    if (!navbar.contains(event.target) && !menuToggle.contains(event.target)) {
+      navMenu.classList.remove("show");
+      navbar.classList.remove("expanded");
+      document.body.style.overflow = "";
+      const menuIcon = document.querySelector(".menu-toggle i");
+      menuIcon.classList.remove("bx-x");
+      menuIcon.classList.add("bx-menu");
+    }
+  });
+}
